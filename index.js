@@ -2,9 +2,8 @@ const express=require("express")
 const mongoose=require("mongoose")
 const bodyParser=require("body-parser")
 const cors=require("cors")
-const dbConnect=require("../emicalback/config/db")
 const userRouter=require("./src/Users/user.router")
-const emiRouter=require("./src/EmiCalculate/emi.router")
+const emiRouter=require("./src//EmiCalculate/emi.router")
 require('dotenv').config();
 
 const app=express();
@@ -21,5 +20,5 @@ app.use("/calculateEMI",emiRouter)
 
 
 app.listen(port,async ()=>{
-    await dbConnect();
+    await mongoose.connect("mongodb+srv://Vivekkhade:vivek@cluster0.czgoiwd.mongodb.net/mockapi?retryWrites=true&w=majority");
 })
