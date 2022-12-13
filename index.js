@@ -9,7 +9,7 @@ require('dotenv').config();
 const app=express();
 
 const port=process.env.PORT || 8080
-const Database=process.env.DATABASE
+
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
